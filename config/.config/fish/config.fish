@@ -785,6 +785,7 @@ set __fish_git_prompt_color_branch yellow
 
 
 function fish_prompt --description 'Write out the prompt'
+  set last_status $status
   set -l top_prompt (date +"%d-%m-%Y %H:%M:%S")
   set bottom_prompt (__fish_git_prompt)
   if [ (echo $bottom_prompt | wc -m) -lt 2 ]
@@ -821,20 +822,19 @@ function fish_prompt --description 'Write out the prompt'
   set_color red -o
   printf "|"
   set_color normal
-  printf "▸ "
+  if [ $last_status = 0 ]
+    set_color green
+    printf "✓ "
+  else
+    set_color red
+    printf "✖ "
+  end
+  #printf " ▸ "
 end
 
 function fish_right_prompt
-  set -l last_status $status
   set_color normal
-  #printf '%s ' (__fish_git_prompt)
-  if test $last_status -eq 0
-    set_color green
-    printf "SUCCESS  ✓"
-  else
-    set_color red
-    printf "FAILURE :("
-  end
+  printf "$CMD_DURATION ms"
 end
 
 
