@@ -7,10 +7,18 @@ function fish_greeting
 		echo -e "\e[31mYou have uncommited changes in your .dotfiles.\e[0m"
 		set error 1
 	end
+	if [ (git rev-list --left-right --count master...origin/master | awk '{print $1}') != 0 ]
+		echo -e "\e[31mYou have unpushed changes in your .dotfiles.\e[0m"
+		set error 1
+	end
 
 	cd ~/Programowanie/Bash/bin
 	if [ (git status --porcelain | wc -l) != 0 ]
 		echo -e "\e[31mYou have uncommited changes in your bin.\e[0m"
+		set error 1
+	end
+	if [ (git rev-list --left-right --count master...origin/master | awk '{print $1}') != 0 ]
+		echo -e "\e[31mYou have unpushed changes in your bin.\e[0m"
 		set error 1
 	end
 
