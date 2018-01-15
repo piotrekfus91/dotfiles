@@ -13,7 +13,6 @@
 [core]
     pager = less -r
     excludesfile = ~/.gitignore
-    hooksPath = ~/.githooks
     editor = vim
     precomposeunicode = true
     autocrlf = false
