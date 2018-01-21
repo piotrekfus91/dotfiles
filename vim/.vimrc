@@ -17,7 +17,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
@@ -31,6 +33,9 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+set expandtab
+set shiftwidth=4
+set softtabstop=4
 
 set mouse=a
 
