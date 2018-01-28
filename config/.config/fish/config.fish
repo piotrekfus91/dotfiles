@@ -873,7 +873,7 @@ set -gx P4_PROD_SMX_X_DR_PASS @P4_PROD_SMX_X_DR_PASS@
 set -gx P4_PROD_SMXCS0_X @P4_PROD_SMXCS0_X@
 
 function tig
-  /usr/bin/tig --all
+  /home/pfus/apps/tig/bin/tig --all
 end
 
 source ~/apps/z-fish/z.fish
