@@ -12,3 +12,7 @@ bind status P !git stash pop
 bind refs a !@git branch %(prompt)
 bind refs u !@git pull --rebase
 bind main u !@git pull --rebase
+
+set mouse = yes
+set main-view = line-number:no,interval=5 id:yes date:default author:email-user commit-title:yes,graph,refs,overflow=no
+set refs-view = line-number:no id:no date:default author:email-user ref commit-title
