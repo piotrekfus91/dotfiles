@@ -840,24 +840,6 @@ end
 
 thefuck --alias | source
 
-function git
-  set gitconfig_path (__find_gitconfig (pwd))
-  if [ "$gitconfig_path" != "" ]
-    /usr/bin/git config --local include.path (realpath $gitconfig_path)
-  end
-  /usr/bin/git $argv
-end
-
-function __find_gitconfig
-  if [ "$argv[1]" = "$HOME" ]
-    echo ""
-  else if test -e $argv[1]/.gitconfig
-    echo $argv[1]/.gitconfig
-  else
-    __find_gitconfig $argv[1]/..
-  end
-end
-
 set -gx GOPATH ~/Programowanie/Go
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH ~/touk/workspace/integracja/bin /home/pfus/apps/node-v6.11.1-linux-x64/bin $PATH

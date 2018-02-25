@@ -95,3 +95,6 @@
         autocorrect = 1 #fucking magic!
 [push]
     default = simple
+
+[includeIf "gitdir:~/touk/"]
+    path = ~/touk/.gitconfig
