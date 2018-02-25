@@ -834,7 +834,9 @@ end
 
 function fish_right_prompt
   set_color normal
-  printf "$CMD_DURATION ms"
+  if [ -n "$CMD_DURATION" ]
+    format_time $CMD_DURATION
+  end
 end
 
 
