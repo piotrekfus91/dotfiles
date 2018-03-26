@@ -859,5 +859,3 @@ set -gx P4_PROD_SMXCS0_X @P4_PROD_SMXCS0_X@
 function tig
   /home/pfus/apps/tig/bin/tig --all
 end
-
-source ~/apps/z-fish/z.fish
