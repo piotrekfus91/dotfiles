@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible
 
 filetype off
@@ -9,10 +10,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
@@ -21,6 +18,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -38,15 +39,6 @@ set shiftwidth=4
 set softtabstop=4
 
 set mouse=a
-
-"---Look and feel ---"
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-set laststatus=2
-let g:airline_detect_paste=1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='molokai'
 
 "--- NERD ---"
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
