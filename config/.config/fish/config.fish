@@ -844,7 +844,7 @@ thefuck --alias | source
 
 set -gx GOPATH ~/Programowanie/Go
 set -gx PATH $GOPATH/bin $PATH
-set -gx PATH ~/touk/workspace/integracja/bin /home/pfus/apps/node-v6.11.1-linux-x64/bin $PATH
+set -gx PATH ~/touk/workspace/integracja/bin $PATH
 set -gx JAVA_HOME ~/apps/jdk1.8.0_131
 set -gx PATH $JAVA_HOME/bin $PATH
 set -gx PATH ~/Programowanie/Bash/bin $PATH
