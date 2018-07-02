@@ -784,52 +784,52 @@ set __fish_git_prompt_color_branch yellow
 #set __fish_git_prompt_char_upstream_behind '↓'
 
 
-function fish_prompt --description 'Write out the prompt'
-  set last_status $status
-  set -l top_prompt (date +"%d-%m-%Y %H:%M:%S")
-  set bottom_prompt (__fish_git_prompt)
-  if [ (echo $bottom_prompt | wc -m) -lt 2 ]
-    set bottom_prompt " (NO REPO) "
-    set bottom_prompt_len (math (echo $bottom_prompt | wc -m) + 0)
-  else
-    set bottom_prompt_len (math (echo $bottom_prompt | wc -m) - 13) # magic constant - len of colouring etc, counted empirically
-  end
-  set -l top_prompt_len (math (echo $top_prompt | wc -m) + 2)
+function fish_prompt
+  # Cache exit status
+  set -l last_status $status
 
-  set_color blue
-  printf "\n"
-  printf " %s " $top_prompt
-  if [ $top_prompt_len -lt $bottom_prompt_len ]
-  	set -l spaces_to_print (math $bottom_prompt_len - $top_prompt_len)
-  	for x in (seq $spaces_to_print); printf " "; end
+  # Just calculate these once, to save a few cycles when displaying the prompt
+  if not set -q __fish_prompt_hostname
+    set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
+    set -g __fish_prompt_hostname (date +"%H:%M:%S")
   end
-  set_color red -o
-  printf "|  "
-  set_color blue
-  printf (pwd); printf "\n"
-  set_color normal
-  if [ "$bottom_prompt" = " (NO REPO) " ]
-    set_color red -o
-    echo -n $bottom_prompt
-    set_color normal
-  else
-    printf '%s ' $bottom_prompt
+
+  set -l normal (set_color normal)
+  set -l white (set_color FFFFFF)
+  set -l nord9 (set_color 81a1c1)
+  set -l nord10 (set_color 5e81ac)
+ 
+  # Configure __fish_git_prompt
+  set -g __fish_git_prompt_char_stateseparator ' '
+  set -g __fish_git_prompt_color 5fdfff
+  set -g __fish_git_prompt_color_flags df5f00
+  set -g __fish_git_prompt_color_prefix white
+  set -g __fish_git_prompt_color_suffix white
+  set -g __fish_git_prompt_showdirtystate true
+  set -g __fish_git_prompt_showuntrackedfiles true
+  set -g __fish_git_prompt_showstashstate true
+  set -g __fish_git_prompt_show_informative_status true 
+ 
+  echo ""
+  # Line 1
+  echo -n $white'╭─ '$nord9$USER$white' at '$nord9$__fish_prompt_hostname$white' in '$nord10(pwd)
+  __fish_git_prompt " (%s)"
+  echo
+
+  # Line 2
+  echo -n $white'╰'
+  echo -n $white'─ '
+  if not set -q __fish_prompt_char
+    if [ $last_status = 0 ]
+      set_color green
+      echo -n "✓ "
+    else
+      set_color red
+      echo -n "✖ "
+    end
   end
-  if [ $top_prompt_len -gt $bottom_prompt_len ]
-  	set -l spaces_to_print (math $top_prompt_len - $bottom_prompt_len)
-  	for x in (seq $spaces_to_print); printf " "; end
-  end
-  set_color red -o
-  printf "|"
-  set_color normal
-  if [ $last_status = 0 ]
-    set_color green
-    printf "✓ "
-  else
-    set_color red
-    printf "✖ "
-  end
-  #printf " ▸ "
+
+  echo $normal
 end
 
 function fish_right_prompt

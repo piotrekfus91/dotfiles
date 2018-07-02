@@ -30,6 +30,13 @@ function fish_greeting
 		end
 	end
 
+        if test -e /tmp/non-actual-repos
+                echo -e -n "\e[31m"
+                cat /tmp/non-actual-repos
+                echo -e "\e[0m"
+                set error 1
+        end
+
 	cd $currentPwd
 
 	if [ $error = 0 ]
