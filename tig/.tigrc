@@ -5,6 +5,7 @@ bind main i !@git rebase %(branch)
 bind main ! !@git branch -d %(branch)
 bind main P !@git push origin HEAD:refs/for/master
 bind main p !@git push --set-upstream origin %(branch)
+bind main O !git remote prune origin
 bind status + !git commit --amend
 bind status a !git add . -u
 bind status S !git stash
