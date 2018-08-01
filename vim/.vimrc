@@ -21,6 +21,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'RRethy/vim-illuminate'
 
 call vundle#end()
 
