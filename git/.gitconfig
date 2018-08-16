@@ -92,7 +92,7 @@
 [apply]
         whitespace = nowarn
 [help]
-        autocorrect = 1 #fucking magic!
+        autocorrect = 0
 [push]
     default = simple
 
