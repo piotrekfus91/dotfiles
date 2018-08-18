@@ -37,6 +37,13 @@ function fish_greeting
                 set error 1
         end
 
+        if test -e /tmp/apps_versions
+                echo -e -n "\e[31m"
+                grep -v -e '^$' /tmp/apps_versions
+                echo -e "\e[0m"
+                set error 1
+        end
+
 	cd $currentPwd
 
 	if [ $error = 0 ]
