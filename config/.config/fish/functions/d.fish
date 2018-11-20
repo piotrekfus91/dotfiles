@@ -1,3 +1,1 @@
-function d -d "fasd match directories only"
-  command fasd -d $argv
-end
+/home/pfus/.config/fisherman/fasd/functions/d.fish

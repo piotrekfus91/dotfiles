@@ -1,3 +1,1 @@
-function sd -d "fasd interactive directory selection"
-  command fasd -sid $argv
-end
+/home/pfus/.config/fisherman/fasd/functions/sd.fish

@@ -1,3 +1,1 @@
-function sf -d "fasd interactive file selection"
-  command fasd -sif $argv
-end
+/home/pfus/.config/fisherman/fasd/functions/sf.fish

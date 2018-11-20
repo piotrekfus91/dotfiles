@@ -1,3 +1,1 @@
-function a -d "fasd match files and directories"
-  command fasd -a $argv
-end
+/home/pfus/.config/fisherman/fasd/functions/a.fish
