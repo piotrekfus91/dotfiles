@@ -857,6 +857,8 @@ set -gx P4_PROD_SMX_X_PASS @P4_PROD_SMX_X_PASS@
 set -gx P4_PROD_SMX_X_DR_PASS @P4_PROD_SMX_X_DR_PASS@
 set -gx P4_PROD_SMXCS0_X @P4_PROD_SMXCS0_X@
 
+set -gx EDITOR vim
+
 function tig
   /home/pfus/apps/tig/bin/tig --all
 end
