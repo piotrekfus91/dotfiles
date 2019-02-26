@@ -849,6 +849,7 @@ set -gx JAVA_HOME ~/apps/jdk1.8.0_131
 set -gx PATH $JAVA_HOME/bin $PATH
 set -gx PATH ~/Programowanie/Bash/bin $PATH
 set -gx PATH ~/apps/node-v8.11.3-linux-x64/bin $PATH
+set -gx PATH ~/apps/apache-maven-3.6.0/bin $PATH
 
 set -gx P4_TESTBED_PASS @P4_TESTBED_PASS@
 set -gx P4_PREPROD_PASS @P4_PREPROD_PASS@
