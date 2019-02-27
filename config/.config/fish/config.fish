@@ -812,7 +812,7 @@ function fish_prompt
  
   echo ""
   # Line 1
-  echo -n $white'╭─ '$nord9$USER$white' at '$nord9$__fish_prompt_hostname$white' in '$nord10(pwd)
+  echo -n $white'╭─ '$nord9$USER$white' at '$nord9(date +"%H:%M:%S")$white' in '$nord10(pwd)
   __fish_git_prompt " (%s)"
   echo
 
