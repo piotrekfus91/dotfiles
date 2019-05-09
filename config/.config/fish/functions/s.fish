@@ -1,1 +1,3 @@
-/home/pfus/.config/fisherman/fasd/functions/s.fish
+function s -d "fasd show, search, select"
+  command fasd -si $argv
+end
